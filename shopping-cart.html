@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping cart</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <nav class="menu">
+        <a href="/index.html" class="logo"></a>
+        <a class="cart" href="/shopping-cart.html">
+          <div class="cart__logo"></div>
+          <div class="cart_inner">Корзина</div>
+          <div class="cart__value">
+            <span class="value-number"></span>
+          </div>
+        </a>
+      </nav>
+
+      <h1>Корзина</h1>
+
+      <div class="cart__items"></div>
+
+      <div class="amount">Сумма <span class="all-cost"></span> ₽</div>
+    </div>
+
+    <div class="introduce">
+      <h2>Пожалуйста, представьтесь</h2>
+      <form id="form_id"
+        onsubmit="return ( ValidMail() )"        class="introduce__form"
+        action="action.php"
+        enctype="multipart/form-data"
+        method="post"
+      >
+        <input
+          class="introduce__field"
+          type="text"
+          name="clientName"
+          placeholder="Ваше имя"
+          required
+        />
+        <input
+          class="introduce__field"
+          type="tel"
+          name="clientPhone"
+          placeholder="Телефон"
+          required
+        />
+        <input id="email"
+          class="introduce__field"
+          type="email"
+          name="clientMail"
+          placeholder="Email"
+          required
+        /><div class="message"></div>
+        <input class="send-form" type="submit" value="оформить заказ" />
+      </form>
+    </div>
+
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <div class="close-btn"><p>×</p></div>
+        <p class="par-1">Спасибо  <span class="clientName"></span>, ваш заказ №165796 оформлен.</p>
+        <p class="par-2">В ближайшее время мы свяжемся с вами по телефону <span class="clientPhone"></span> для его подтверждения.</p>
+      </div>
+    </div>
+  
+    <script src="/cart.js"></script>
+    <script src="/order.js"></script>
+  </body>
+</html>
